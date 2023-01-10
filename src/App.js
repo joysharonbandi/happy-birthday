@@ -109,7 +109,7 @@ export default function App() {
         const arraySum = array.reduce((a, value) => a + value, 0);
         const average = arraySum / array.length;
         console.log(Math.round(average));
-        if (Math.round(average) > 50) {
+        if (Math.round(average) > 20) {
           setFire("fadeout");
         }
         // colorPids(average);
