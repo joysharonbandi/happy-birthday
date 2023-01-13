@@ -9,7 +9,7 @@ import "./App.css";
 // import Giftcard from "./components/Giftcard";
 
 export default function App() {
-  const [party, setParty] = useState(true);
+  const [party, setParty] = useState(false);
   const { height, width } = useWindowDimensions();
 
   // console.log(window.innerWidth());
