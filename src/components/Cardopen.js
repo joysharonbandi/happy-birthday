@@ -11,7 +11,13 @@ export default function Cardopen() {
       <div class="book">
         <div class="page">
           <div
-            class="page__1"
+            class="page__1 openCloseAnimation"
+            id="page_1"
+            onMouseLeave={() => {
+              document
+                .getElementById("page_1")
+                ?.classList?.add?.("closeAnimaion");
+            }}
             style={{
               backgroundImage: `url(${coverpage})`,
               backgroundSize: "cover",
