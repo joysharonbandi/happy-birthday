@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+/* .main {
+  background-color: #282c34;
+  width: 100vw;
+  height: 100vh;
+} */
+
+.greetingCard {
+  animation: fadeUp 3s;
+  animation-iteration-count: initial;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
