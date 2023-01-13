@@ -35,7 +35,7 @@ export default function App() {
         {!party && (
           <Cake
             onchange={(e) => {
-              e === "fadeout" && setParty(true);
+              e === "fadeout" && setTimeout(() => setParty(true), 2000);
             }}
           />
         )}
