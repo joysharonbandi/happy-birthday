@@ -141,3 +141,11 @@
     transform: rotateY(0deg);
   }
 }
+.text1 {
+  font-family: cursive;
+}
+
+.text2 {
+  font-family: cursive;
+  font-size: 15px;
+}

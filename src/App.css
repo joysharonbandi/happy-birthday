@@ -43,7 +43,7 @@
 } */
 
 .greetingCard {
-  animation: fadeUp 3s;
+  animation: fadeUp 4s;
   animation-iteration-count: initial;
 }
 

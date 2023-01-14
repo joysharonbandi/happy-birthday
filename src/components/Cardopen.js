@@ -35,10 +35,14 @@ export default function Cardopen() {
               // opacity: 0.2,
             }}
           >
-            <p>Surprise!</p>
-            <p> a very happy birth day</p>
-
-            <Giftcard />
+            <p class="text1">Surprise!</p>
+            <p class="text2">
+              I hope you create a memory that becomes your happy place in all
+              the many years yet to come on your birthday. Happy Birthday!
+            </p>
+            <p style={{ fontSize: "10px", marginTop: 50 }}>
+              Click on Gift card😅
+            </p>
             <div class="small_gift_card">
               <img
                 src={giftcard}

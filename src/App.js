@@ -7,6 +7,7 @@ import useWindowDimensions from "./hooks/useDimensionhook";
 import Cardopen from "./components/Cardopen";
 import "./App.css";
 // import Giftcard from "./components/Giftcard";
+import banner from "./assets/banner.png";
 
 export default function App() {
   const [party, setParty] = useState(false);
@@ -31,6 +32,19 @@ export default function App() {
           // marginBottom: "100px",
         }}
       >
+        {" "}
+        <img
+          src={banner}
+          width="380px"
+          height="100px"
+          style={{
+            borderRadiu: "5px",
+            backgroundBlendMode: "multiply",
+            backgroundColor: "black",
+            position: "absolute",
+            top: 50,
+          }}
+        />
         {party && <Confetti width={width} height={height} />}
         {!party && (
           <Cake
