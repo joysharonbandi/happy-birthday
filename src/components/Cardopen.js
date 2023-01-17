@@ -5,7 +5,7 @@ import Giftcard from "./Giftcard";
 import giftcard from "../assets/giftcard.jpg";
 import coverpage from "../assets/giftCover.jpg";
 
-export default function Cardopen() {
+export default function Cardopen({ onclick }) {
   return (
     <div class="codepen-wrapper">
       <div class="book">
@@ -49,6 +49,9 @@ export default function Cardopen() {
                 width="60px"
                 height="40px"
                 style={{ borderRadius: "5px" }}
+                onClick={() => {
+                  onclick("open");
+                }}
               />
             </div>
           </div>
