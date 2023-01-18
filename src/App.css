@@ -83,3 +83,21 @@
     height: 0;
   }
 }
+
+.myntra {
+  animation: myntra 4s;
+}
+@keyframes myntra {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

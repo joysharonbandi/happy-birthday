@@ -74,7 +74,6 @@ export default function Cake({ onchange }) {
     // animation-duration: 4;
     // animation-iteration-count: infinite;
   `;
-  console.log(fire);
 
   navigator.mediaDevices
     .getUserMedia({

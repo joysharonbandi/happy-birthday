@@ -45,7 +45,6 @@ export default function App() {
   }
 
   // console.log(window.innerWidth());
-  console.log(height, width);
 
   return (
     <div style={{ width: "100%", height: "100vh" }}>
@@ -105,10 +104,30 @@ export default function App() {
                 onClick={() => {
                   navigator.clipboard.writeText("joy");
                 }}
-                style={{ transition: "initial", transitionDuration: "2s" }}
+                class="myntra"
+                // style={{ transition: "initial", transitionDuration: "2s" }}
               />
             </div>
-            <p>1223148</p>
+            <div style={{ width: "100%" }}>
+              {/* <p
+                style={{
+                  left: 5,
+                  // backgroundColor: "black",
+                }}
+              >
+                Gift card Details
+              </p> */}
+              <div style={{ display: "flex", justifyContent: "space-around" }}>
+                <div>
+                  <p>Card No</p>
+                  <p>6001220034563862 </p>
+                </div>
+                <div>
+                  <p>PIN</p>
+                  <p>279399</p>
+                </div>
+              </div>
+            </div>
             {/* <img src={nykaa} style={{ width: "200px" }} /> */}
           </div>
         </Modal>
