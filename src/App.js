@@ -102,7 +102,7 @@ export default function App() {
               <img
                 src={myntra}
                 onClick={() => {
-                  navigator.clipboard.writeText("joy");
+                  navigator.clipboard.writeText("6001220034563862");
                 }}
                 class="myntra"
                 // style={{ transition: "initial", transitionDuration: "2s" }}
@@ -120,7 +120,7 @@ export default function App() {
               <div style={{ display: "flex", justifyContent: "space-around" }}>
                 <div>
                   <p>Card No</p>
-                  <p>6001220034563862 </p>
+                  <p>6001220034563862</p>
                 </div>
                 <div>
                   <p>PIN</p>

@@ -37,12 +37,13 @@ export default function Cardopen({ onclick }) {
           >
             <p class="text1">Surprise!</p>
             <p class="text2">
-              I hope you create a memory that becomes your happy place in all
-              the many years yet to come on your birthday. Happy Birthday!
+              A Very Happy birthday...May this year gives you much more
+              happiness and success... Keep that Smile it looks good on you..
+              Wishing you the very best for your new phase in life😄
             </p>
-            <p style={{ fontSize: "10px", marginTop: 50 }}>
-              Click on Gift card😅
-            </p>
+            {/* <p style={{ fontSize: "10px", marginTop: 50 }}>
+              Click on Gift card
+            </p> */}
             <div class="small_gift_card">
               <img
                 src={giftcard}
