@@ -69,7 +69,7 @@ export default function App() {
     };
 
     axios({
-      url: '/_payment',
+      url: 'https://test.payu.in/_payment',
       method: 'POST',
       headers: myHeaders,
       data,
