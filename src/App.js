@@ -1,28 +1,29 @@
-import React, { useState } from "react";
-import styled, { keyframes } from "styled-components";
-import { bounce, fadeIn, flash } from "react-animations";
-import Confetti from "react-confetti";
-import Cake from "./components/Cake";
-import useWindowDimensions from "./hooks/useDimensionhook";
-import Cardopen from "./components/Cardopen";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
+import { bounce, fadeIn, flash } from 'react-animations';
+import Confetti from 'react-confetti';
+import Cake from './components/Cake';
+import useWindowDimensions from './hooks/useDimensionhook';
+import Cardopen from './components/Cardopen';
+import './App.css';
 // import Giftcard from "./components/Giftcard";
-import banner from "./assets/banner.png";
-import myntra from "./assets/myntra.png";
-import giftcard from "./assets/giftcard.jpg";
-import clip from "./assets/clip.png";
-import Modal from "react-modal";
+import banner from './assets/banner.png';
+import myntra from './assets/myntra.png';
+import giftcard from './assets/giftcard.jpg';
+import clip from './assets/clip.png';
+import Modal from 'react-modal';
+import axios from 'axios';
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "transparent",
-    overflow: "hidden",
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: 'transparent',
+    overflow: 'hidden',
   },
 };
 
@@ -37,7 +38,7 @@ export default function App() {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
+    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -46,69 +47,111 @@ export default function App() {
 
   // console.log(window.innerWidth());
 
+  const d = async () => {
+    var myHeaders = {
+      accept: 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Cookie: 'PHPSESSID=mirhro32e7nneoahr67jl0b0ca',
+      'Access-Control-Allow-Origin': '*',
+    };
+
+    const data = {
+      key: 'IrPKpg',
+      txnid: 'PQI6MqpYrjEefk',
+      amount: '10.00',
+      firstname: 'Test',
+      email: 'test@test.com',
+      phone: '9876543210',
+      productinfo: 'iPhone',
+      surl: 'https://apiplayground-response.herokuapp.com/',
+      furl: 'https://apiplayground-response.herokuapp.com/',
+      hash: '2c554cc740147887e44051326ee7b147c99c1b9fdf995a4fe823db856b1fd81388afc076ec1195b8ebbe5454e5cb527a2dfb8ae263396183ceb05ec76a7eae58',
+    };
+
+    axios({
+      url: '/_payment',
+      method: 'POST',
+      headers: myHeaders,
+      data,
+      redirect: 'follow',
+    })
+      .then((ress) => {
+        // console.log({ ...ress, data: "  " });
+        // console.log("dinu", ress);
+      })
+      .catch((error) => {
+        console.log(error, 'errrrr');
+      });
+    // console.log(setHtml({ __html: d.data || "" }));
+  };
+
+  useEffect(() => {
+    d();
+  }, []);
+
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
-      <div style={{ position: "relative", zIndex: 1 }} class="modal">
+    <div style={{ width: '100%', height: '100vh' }}>
+      <div style={{ position: 'relative', zIndex: 1 }} class='modal'>
         {/* <button onClick={openModal}>Open Modal</button> */}
         <Modal
           isOpen={modalIsOpen}
           // onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
-          contentLabel="Example Modal"
-          class="modal"
+          contentLabel='Example Modal'
+          class='modal'
         >
           {/* <h1>copied to clipboard</h1> */}
           <div
             style={{
-              width: "300px",
-              height: "300px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              flexDirection: "column",
+              width: '300px',
+              height: '300px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column',
             }}
           >
             <img
               src={giftcard}
-              width="500px"
-              height="250px"
-              style={{ borderRadius: "5px" }}
-              class="modal"
+              width='500px'
+              height='250px'
+              style={{ borderRadius: '5px' }}
+              class='modal'
             />
-            <div style={{ position: "relative" }}>
+            <div style={{ position: 'relative' }}>
               <div
                 style={{
-                  position: "absolute",
+                  position: 'absolute',
                   bottom: 3,
-                  color: "white",
+                  color: 'white',
 
-                  fontSize: "5px",
+                  fontSize: '5px',
                   marginLeft: 5,
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                   // backgroundColor: "black",
                 }}
               >
                 <h3>COPY TO CLIP-BOARD</h3>
                 <img
                   src={clip}
-                  width="15px"
-                  height="10px"
-                  style={{ objectFit: "contain" }}
+                  width='15px'
+                  height='10px'
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
               <img
                 src={myntra}
                 onClick={() => {
-                  navigator.clipboard.writeText("6001220034563862");
+                  navigator.clipboard.writeText('6001220034563862');
                 }}
-                class="myntra"
+                class='myntra'
                 // style={{ transition: "initial", transitionDuration: "2s" }}
               />
             </div>
-            <div style={{ width: "100%" }}>
+            <div style={{ width: '100%' }}>
               {/* <p
                 style={{
                   left: 5,
@@ -117,7 +160,7 @@ export default function App() {
               >
                 Gift card Details
               </p> */}
-              <div style={{ display: "flex", justifyContent: "space-around" }}>
+              <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <div>
                   <p>Card No</p>
                   <p>6001220034563862</p>
@@ -134,28 +177,28 @@ export default function App() {
       </div>
       <div
         style={{
-          width: "100vw",
-          height: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "end",
-          backgroundColor: "black",
+          width: '100vw',
+          height: '100vh',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'end',
+          backgroundColor: 'black',
           // position: "absolute",
           // top: "50%",
 
           // marginBottom: "100px",
         }}
       >
-        {" "}
+        {' '}
         <img
           src={banner}
-          width="380px"
-          height="100px"
+          width='380px'
+          height='100px'
           style={{
-            borderRadiu: "5px",
-            backgroundBlendMode: "multiply",
-            backgroundColor: "black",
-            position: "absolute",
+            borderRadiu: '5px',
+            backgroundBlendMode: 'multiply',
+            backgroundColor: 'black',
+            position: 'absolute',
             top: 50,
           }}
         />
@@ -163,7 +206,7 @@ export default function App() {
         {!party && (
           <Cake
             onchange={(e) => {
-              e === "fadeout" && setTimeout(() => setParty(true), 1000);
+              e === 'fadeout' && setTimeout(() => setParty(true), 1000);
             }}
           />
         )}
@@ -171,29 +214,29 @@ export default function App() {
       {party && (
         <div
           style={{
-            display: "flex",
-            width: "100vw",
-            height: "100vh",
-            overflow: "hidden",
-            justifyContent: "center",
-            alignItems: "center",
-            overflowY: "hidden",
+            display: 'flex',
+            width: '100vw',
+            height: '100vh',
+            overflow: 'hidden',
+            justifyContent: 'center',
+            alignItems: 'center',
+            overflowY: 'hidden',
             // zIndex: 100,
-            position: "absolute",
+            position: 'absolute',
             top: 0,
           }}
-          class="greetingCard"
+          class='greetingCard'
         >
           <div
             style={{
-              width: "250px",
+              width: '250px',
               // backgroundColor: "black",
-              height: "300px",
+              height: '300px',
             }}
           >
             <Cardopen
               onclick={(e) => {
-                e === "open" && setIsOpen(true);
+                e === 'open' && setIsOpen(true);
               }}
             />
           </div>
