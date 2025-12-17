@@ -12,7 +12,8 @@ import myntra from './assets/myntra.png';
 import giftcard from './assets/giftcard.jpg';
 import clip from './assets/clip.png';
 import Modal from 'react-modal';
-import axios from 'axios';
+import axios from 'axios'
+import puma from './assets/puma.jpg';
 
 const customStyles = {
   content: {
@@ -143,9 +144,9 @@ export default function App() {
                 />
               </div>
               <img
-                src={myntra}
+                src={puma}
                 onClick={() => {
-                  navigator.clipboard.writeText('6001220034563862');
+                  navigator.clipboard.writeText('GPFX36794319');
                 }}
                 class='myntra'
                 // style={{ transition: "initial", transitionDuration: "2s" }}
@@ -163,11 +164,12 @@ export default function App() {
               <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <div>
                   <p>Card No</p>
-                  <p>6001220034563862</p>
+                  <p>GPFX36794319</p>
+                    
                 </div>
                 <div>
                   <p>PIN</p>
-                  <p>279399</p>
+                  <p>NA</p>
                 </div>
               </div>
             </div>
