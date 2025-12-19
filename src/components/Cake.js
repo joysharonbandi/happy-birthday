@@ -109,6 +109,7 @@ export default function Cake({ onchange }) {
     });
   return (
     <div class="cake">
+
       <div class="plate"></div>
       <div class="layer layer-bottom"></div>
       <div class="layer layer-middle"></div>

@@ -8,6 +8,22 @@ import coverpage from "../assets/giftCover.jpg";
 export default function Cardopen({ onclick }) {
   return (
     <div class="codepen-wrapper">
+         <div
+              style={{
+                position: 'absolute',
+                bottom: '75%',
+                fontSize: '2rem',
+                fontWeight: 'bold',
+                color: '#FFD700',
+                textShadow: '0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4)',
+                animation: 'pulse 2s ease-in-out infinite',
+                fontFamily: 'Arial, sans-serif',
+                letterSpacing: '2px',
+                textAlign: 'center',
+              }}
+            >
+               Click to open 
+            </div>
       <div class="book">
         <div class="page">
           <div
@@ -24,7 +40,7 @@ export default function Cardopen({ onclick }) {
               backgroundRepeat: "no-repeat",
             }}
           >
-            {/* <p>Hover to open</p> */}
+    
           </div>
           <div
             class="page__2"
@@ -37,14 +53,14 @@ export default function Cardopen({ onclick }) {
           >
             <p class="text1">Surprise!</p>
             <p class="text2">
-              A Very Happy birthday...May this year gives you much more
-              happiness and success... Keep that Smile it looks good on you..
-              Wishing you the very best for your new phase in life😄
+           <span style={{ fontWeight: 'bold' }}>Wishing you a very Happy Birthday 🎉</span>
+           <br />
+           <span style={{ fontSize: '12px' }}> May this year bring you continued success, happiness, and many achievements. Thank you for your guidance, support, and for keeping the team motivated and on track. Wishing you all the very best for the year ahead.</span>
             </p>
             {/* <p style={{ fontSize: "10px", marginTop: 50 }}>
               Click on Gift card
             </p> */}
-            <div class="small_gift_card">
+            {/* <div class="small_gift_card">
               <img
                 src={giftcard}
                 width="60px"
@@ -54,7 +70,7 @@ export default function Cardopen({ onclick }) {
                   onclick("open");
                 }}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

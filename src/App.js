@@ -206,11 +206,29 @@ export default function App() {
         />
         {party && <Confetti width={width} height={height} />}
         {!party && (
-          <Cake
-            onchange={(e) => {
-              e === 'fadeout' && setTimeout(() => setParty(true), 1000);
-            }}
-          />
+          <>
+            <div
+              style={{
+                position: 'absolute',
+                bottom: '60%',
+                fontSize: '2rem',
+                fontWeight: 'bold',
+                color: '#FFD700',
+                textShadow: '0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4)',
+                animation: 'pulse 2s ease-in-out infinite',
+                fontFamily: 'Arial, sans-serif',
+                letterSpacing: '2px',
+                textAlign: 'center',
+              }}
+            >
+              🎂 Blow the Candle 🎂
+            </div>
+            <Cake
+              onchange={(e) => {
+                e === 'fadeout' && setTimeout(() => setParty(true), 1000);
+              }}
+            />
+          </>
         )}
       </div>
       {party && (
